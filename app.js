@@ -1,11 +1,8 @@
 const http = require("http");
 
-console.log("start new project ");
+const fs = require("fs");
 
-http
-  .createServer((req, res) => {
-    console.log(req, res);
-  })
-  .listen(8080);
+const reqHandler = require("./routes");
+console.log("start listing ..... ");
 
-console.log(http);
+http.createServer(reqHandler.handler).listen(8080);
